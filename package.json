@@ -1,0 +1,22 @@
+{
+  "name": "xacuti",
+  "devDependencies": {
+    "stylelint": "^7.10.1",
+    "stylelint-config-wordpress": "^9.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WordPressGoa/xacuti.git"
+  },
+  "bugs": {
+    "url": "https://github.com/WordPressGoa/xacuti/issues"
+  },
+  "homepage": "https://github.com/WordPressGoa/xacuti",
+  "stylelint": {
+    "extends": "stylelint-config-wordpress"
+  },
+  "scripts": {
+    "stylelint": "./node_modules/.bin/stylelint */*.css",
+    "test": "npm run stylelint"
+  }
+}

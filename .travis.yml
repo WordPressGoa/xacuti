@@ -12,6 +12,9 @@ php:
 - '7.0'
 - '7.1'
 
+addons:
+  ssh_known_hosts: 139.59.62.25
+
 before_install: openssl aes-256-cbc -K $encrypted_837b9fca4048_key -iv $encrypted_837b9fca4048_iv -in deploy_rsa.enc -out deploy_rsa -d
 
 install:

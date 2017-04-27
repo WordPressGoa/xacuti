@@ -25,6 +25,6 @@
     "eslint": "./node_modules/.bin/eslint */**.js",
     "lint": "npm run stylelint && npm run eslint",
     "test": "npm run lint",
-    "deploy": "ssh wordpressgoa 'cd xacuti && git pull origin master'"
+    "deploy": "ssh prtksxna@139.59.62.25 'cd xacuti && git pull origin master'"
   }
 }

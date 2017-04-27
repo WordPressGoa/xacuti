@@ -3,7 +3,6 @@ dist: trusty
 language: node_js
 
 node_js:
-- '6'
 - '7'
 
 php:
@@ -13,13 +12,12 @@ php:
 - '7.0'
 - '7.1'
 
+before_install: openssl aes-256-cbc -K $encrypted_837b9fca4048_key -iv $encrypted_837b9fca4048_iv -in deploy_rsa.enc -out deploy_rsa -d
+
 install:
 - npm install
 - composer install
 
 script:
 - npm test
-
-before_deploy:
-- openssl aes-256-cbc -K $encrypted_837b9fca4048_key -iv $encrypted_837b9fca4048_iv
-  -in deploy_rsa.enc -out deploy_rsa -d
+- 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then npm run deploy; fi'

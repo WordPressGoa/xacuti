@@ -15,12 +15,22 @@ php:
 addons:
   ssh_known_hosts: 139.59.62.25
 
-before_install: openssl aes-256-cbc -K $encrypted_837b9fca4048_key -iv $encrypted_837b9fca4048_iv -in deploy_rsa.enc -out deploy_rsa -d
-
 install:
 - npm install
 - composer install
 
 script:
 - npm test
-- 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then npm run deploy; fi'
+
+before_deploy:
+- openssl aes-256-cbc -K $encrypted_837b9fca4048_key -iv $encrypted_837b9fca4048_iv -in deploy_rsa.enc -out deploy_rsa -d
+- eval "$(ssh-agent -s)"
+- chmod 600 deploy_rsa
+- ssh-add deploy_rsa
+
+deploy:
+  provider: script
+  skip_cleanup: true
+  script: npm run deploy
+  on:
+    branch: master

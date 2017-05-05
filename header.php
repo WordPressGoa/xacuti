@@ -34,7 +34,8 @@
 			endif;
 
 			$description = get_bloginfo( 'description', 'display' );
-			if ( $description || is_customize_preview() ) : ?>
+
+if ( $description || is_customize_preview() ) : ?>
 				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
 			<?php
 			endif; ?>
@@ -45,7 +46,7 @@
 			<?php wp_nav_menu( array(
 				'theme_location' => 'menu-1',
 				'menu_id' => 'primary-menu',
-			 ) ); ?>
+			) ); ?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * xacuti Theme Customizer
+ * Xacuti Theme Customizer
  *
  * @package xacuti
  */

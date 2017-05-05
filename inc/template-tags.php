@@ -92,7 +92,9 @@ endif;
  * @return bool
  */
 function xacuti_categorized_blog() {
+	// @codingStandardsIgnoreStart
 	if ( false === ( $all_the_cool_cats = get_transient( 'xacuti_categories' ) ) ) {
+		// @codingStandardsIgnoreEnd
 		// Create an array of all the categories that are attached to posts.
 		$all_the_cool_cats = get_categories( array(
 			'fields'     => 'ids',

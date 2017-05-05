@@ -17,7 +17,7 @@
 	<div class="page-content">
 		<?php
 		if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
-
+			<?php // translators:  get started link. ?>
 			<p><?php printf( wp_kses( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'xacuti' ), array(
 				'a' => array(
 					'href' => array(),

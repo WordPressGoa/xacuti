@@ -16,6 +16,7 @@ get_header(); ?>
 		if ( have_posts() ) : ?>
 
 			<header class="page-header">
+				<?php // translators: 1: search term. ?>
 				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'xacuti' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 			</header><!-- .page-header -->
 

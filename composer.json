@@ -5,6 +5,6 @@
   },
   "scripts": {
     "post-install-cmd": "./vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs",
-    "test": "./vendor/bin/phpcs --standard=WordPress *.php */*.php"
+    "test": "./vendor/bin/phpcs --standard=WordPress *.php */*.php --ignore=vendor"
   }
 }

@@ -21,6 +21,7 @@ install:
 
 script:
 - npm test
+- composer test
 
 before_deploy:
 - openssl aes-256-cbc -K $encrypted_837b9fca4048_key -iv $encrypted_837b9fca4048_iv -in deploy_rsa.enc -out deploy_rsa -d
